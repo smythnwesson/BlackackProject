@@ -7,5 +7,3 @@
 # Technologies used
 
 # Lessons learned
-# BlackackProject
-# BlackackProject
