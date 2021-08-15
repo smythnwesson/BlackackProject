@@ -14,6 +14,16 @@ public class BlackjackApp {
 	}
 	
 	public void run() {
+		
+		blackJackDealer.shuffleDeck();
+		blackJackDealer.dealToPlayer();
+		blackJackDealer.dealToDealer();
+		newPlayer.playerTurn();
+		blackJackDealer.dealerTurn();
+		blackJackDealer.shuffleDeck();
+		
+		
+		
 		//I need a Dealer
 		//I need a Player
 		//Determine the rules of the game

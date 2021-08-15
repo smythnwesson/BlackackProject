@@ -14,14 +14,14 @@ public void addCard(Card card) {
 	cards.add(card);
 }
 public void clearHand() {
-	cards.clear();
+	cards.removeAll(cards);
 }
 public int getHandValue() {
 	int counter = 0;
 	for (Card card : cards) {
 		counter += card.getValue();
 	}
-	return 0;
+	return counter;
 }
 
 public void blackjackHand() {
@@ -29,11 +29,17 @@ public void blackjackHand() {
 }
 
 public boolean isBlackjack() {
-return true;	
+	if(getHandValue() == 21) {
+		System.out.println("BLACKJACK!!");
+	}
+	return true;
 }
 
 public boolean isBust() {
-	return false;
+	if(getHandValue() > 21) {
+		System.out.println("BUST!!");
+	}
+	return true;
 }
 
 

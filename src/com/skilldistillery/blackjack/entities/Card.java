@@ -6,6 +6,9 @@ public class Card {
 	private Rank rank;
 	private Suit suit;
 	private int value;
+	public Card() {
+		
+	}
 
 	public Card(Rank rank, Suit suit) {
 		this.rank = rank;
