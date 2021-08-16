@@ -5,48 +5,50 @@ import java.util.List;
 
 public class Hand {
 	protected List<Card> cards = new ArrayList<>();
-	
-public Hand() {
-	
-}
 
-public void addCard(Card card) {
-	cards.add(card);
-}
-public void clearHand() {
-	cards.removeAll(cards);
-}
-public int getHandValue() {
-	int counter = 0;
-	for (Card card : cards) {
-		counter += card.getValue();
+	public Hand() {
+
 	}
-	return counter;
-}
 
-public void blackjackHand() {
-	
-}
-
-public boolean isBlackjack() {
-	if(getHandValue() == 21) {
-		System.out.println("BLACKJACK!!");
+	public void addCard(Card card) {
+		cards.add(card);
 	}
-	return true;
-}
 
-public boolean isBust() {
-	if(getHandValue() > 21) {
-		System.out.println("BUST!!");
+	public List<Card> clearHand() {
+		List<Card> currentHand = new ArrayList<>(cards);
+		cards.removeAll(cards);
+		return currentHand;
+		
 	}
-	return true;
-}
 
+	public int getHandValue() {
+		int counter = 0;
+		for (Card card : cards) {
+			counter += card.getValue();
+		}
+		return counter;
+	}
 
+	public boolean isBlackjack() {
+		if (getHandValue() == 21) {
+			return true;
+		}
+		return false;
+	}
 
-@Override
-public String toString() {
-	return "Hand [cards=" + cards + "]";
-}
+	public boolean isBust() {
+		if (getHandValue() > 21) {
+			return true;
+		}
+		return false;
+	}
+	public List<Card> getCards(){
+		return cards;
+	}
+
+	@Override
+	public String toString() {
+		return "The dealer has " + cards;
+	}
 
 }

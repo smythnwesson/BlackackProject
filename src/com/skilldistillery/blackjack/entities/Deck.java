@@ -9,7 +9,7 @@ public class Deck {
 
 	public Deck() {
 		deck = new ArrayList<>();
-		
+
 		for (Suit suit : Suit.values()) {
 			for (Rank rank : Rank.values()) {
 				Card currentCard = new Card(rank, suit);
@@ -17,15 +17,29 @@ public class Deck {
 			}
 		}
 	}
-	
+
 	public int checkDeckSize() {
 		return deck.size();
 	}
+
 	public Card dealCard() {
 		return deck.remove(0);
 	}
+
 	public void shuffleCards() {
 		Collections.shuffle(deck);
 	}
-		
+
+	public void addCardsToDeck(List<Card> cards) {
+		deck.addAll(cards);
+	}
+
+	public List<Card> getDeck() {
+		return deck;
+	}
+
+	public void setDeck(List<Card> deck) {
+		this.deck = deck;
+	}
+
 }

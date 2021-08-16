@@ -6,20 +6,19 @@ public class Card {
 	private Rank rank;
 	private Suit suit;
 	private int value;
+
 	public Card() {
-		
+
 	}
 
 	public Card(Rank rank, Suit suit) {
 		this.rank = rank;
 		this.suit = suit;
 	}
-	Card(int val) {
-		this.value = val;
-	}
 
+	
 	public int getValue() {
-		return value;
+		return rank.getValue();
 	}
 
 	@Override
@@ -44,5 +43,4 @@ public class Card {
 		return rank + " of " + suit;
 	}
 
-	
 }
