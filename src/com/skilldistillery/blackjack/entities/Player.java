@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Player {
 	Scanner sc = new Scanner(System.in);
 	protected Hand playerHand;
-	Dealer dealer;
+	private Dealer dealer;
 
 	public void setDealer(Dealer dealer) {
 		this.dealer = dealer;

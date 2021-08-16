@@ -3,9 +3,9 @@ package com.skilldistillery.blackjack.entities;
 import java.util.List;
 
 public class Dealer {
-	Deck newDeck = new Deck();
-	Hand hand = new Hand();
-	Player player;
+	private Deck newDeck = new Deck();
+	private Hand hand = new Hand();
+	private Player player;
 
 	// dealer needs to be able to deal cards to himself from the deck and to the
 	// player.
