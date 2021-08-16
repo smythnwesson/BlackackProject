@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hand {
+	Player player;
+	Dealer dealer;
 	protected List<Card> cards = new ArrayList<>();
 
 	public Hand() {
@@ -30,10 +32,13 @@ public class Hand {
 	}
 
 	public boolean isBlackjack() {
-		if (getHandValue() == 21) {
+		if ((getHandValue() == 21) && (cards.size() == 2)) {
 			return true;
 		}
 		return false;
+	}
+	public void checkBlackJack() {
+		
 	}
 
 	public boolean isBust() {
@@ -42,6 +47,7 @@ public class Hand {
 		}
 		return false;
 	}
+	
 	public List<Card> getCards(){
 		return cards;
 	}

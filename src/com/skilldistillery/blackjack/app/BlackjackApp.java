@@ -3,6 +3,7 @@ package com.skilldistillery.blackjack.app;
 import java.util.Scanner;
 
 import com.skilldistillery.blackjack.entities.Dealer;
+import com.skilldistillery.blackjack.entities.Hand;
 import com.skilldistillery.blackjack.entities.Player;
 
 public class BlackjackApp {
@@ -10,6 +11,7 @@ public class BlackjackApp {
 	Player newPlayer = new Player();
 	// I need a Dealer
 	Dealer blackJackDealer = new Dealer(newPlayer);
+	Hand checkHand = new Hand();
 	Scanner kb = new Scanner(System.in);
 
 	public static void main(String[] args) {
@@ -24,6 +26,17 @@ public class BlackjackApp {
 		do {
 			blackJackDealer.shuffleDeck();
 			blackJackDealer.initialDeal();
+			boolean isBlackjack;
+			isBlackjack = blackJackDealer.getHand().isBlackjack();
+			if(isBlackjack) {
+				System.out.println("The dealer got a Blackjack! You lose!!!");
+				break;
+			}
+			isBlackjack = newPlayer.getPlayerHand().isBlackjack();
+			if(isBlackjack) {
+				System.out.println("You got a Blackjack! You win!!!");
+				break;
+			}
 			boolean gameStatus = newPlayer.playerTurn();
 			if (!gameStatus) {
 				blackJackDealer.dealerTurn();
@@ -46,7 +59,6 @@ public class BlackjackApp {
 	public void setup() {
 		newPlayer.setDealer(blackJackDealer);
 	}
-
 	public void gameResult() {
 		if (newPlayer.getPlayerHand().getHandValue() > blackJackDealer.getHand().getHandValue()
 				&& newPlayer.getPlayerHand().getHandValue() < 22) {
@@ -59,5 +71,7 @@ public class BlackjackApp {
 			System.out.println("DEALER BUSTS! YOU WIN!!");
 		}
 	}
+
+
 
 }

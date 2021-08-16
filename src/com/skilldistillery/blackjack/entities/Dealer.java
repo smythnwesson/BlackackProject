@@ -65,9 +65,8 @@ public class Dealer {
 		} else {
 			keepGoing = false;
 		}
-
 	}
-
+		
 	public Hand getHand() {
 		return hand;
 	}

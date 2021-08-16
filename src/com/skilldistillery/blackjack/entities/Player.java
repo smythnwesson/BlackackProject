@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Player {
 	Scanner sc = new Scanner(System.in);
 	protected Hand playerHand;
-	Dealer dealer;
+	 Dealer dealer;
+	Card card;
 	
 	public void setDealer(Dealer dealer) {
 		this.dealer = dealer;
@@ -21,12 +22,8 @@ public class Player {
 			String userInput = sc.nextLine();
 			if (userInput.equalsIgnoreCase("hit")) {
 				dealer.dealToPlayer();
-				if(playerHand.isBust()) {
+				if(playerHand.getHandValue() > 21) {
 					System.out.println("bust");
-					return true;
-				}
-				if(playerHand.isBlackjack()) {
-					System.out.println("blackjack");
 					return true;
 				}
 				
