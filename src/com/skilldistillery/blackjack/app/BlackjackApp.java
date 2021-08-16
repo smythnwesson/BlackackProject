@@ -28,12 +28,12 @@ public class BlackjackApp {
 			blackJackDealer.initialDeal();
 			boolean isBlackjack;
 			isBlackjack = blackJackDealer.getHand().isBlackjack();
-			if(isBlackjack) {
+			if (isBlackjack) {
 				System.out.println("The dealer got a Blackjack! You lose!!!");
 				break;
 			}
 			isBlackjack = newPlayer.getPlayerHand().isBlackjack();
-			if(isBlackjack) {
+			if (isBlackjack) {
 				System.out.println("You got a Blackjack! You win!!!");
 				break;
 			}
@@ -47,9 +47,9 @@ public class BlackjackApp {
 			System.out.println("Would you like to play again? Y for yes N for no: ");
 			String userInput = kb.nextLine();
 			kb.nextLine();
-			if(userInput.equalsIgnoreCase ("Y")) {
+			if (userInput.equalsIgnoreCase("Y")) {
 				keepGoing = true;
-			}else if(userInput.equalsIgnoreCase ("N")) {
+			} else if (userInput.equalsIgnoreCase("N")) {
 				keepGoing = false;
 			}
 		} while (keepGoing);
@@ -59,6 +59,7 @@ public class BlackjackApp {
 	public void setup() {
 		newPlayer.setDealer(blackJackDealer);
 	}
+
 	public void gameResult() {
 		if (newPlayer.getPlayerHand().getHandValue() > blackJackDealer.getHand().getHandValue()
 				&& newPlayer.getPlayerHand().getHandValue() < 22) {
@@ -71,7 +72,5 @@ public class BlackjackApp {
 			System.out.println("DEALER BUSTS! YOU WIN!!");
 		}
 	}
-
-
 
 }

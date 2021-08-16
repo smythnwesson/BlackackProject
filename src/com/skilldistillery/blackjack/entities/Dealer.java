@@ -54,19 +54,19 @@ public class Dealer {
 		// dealer will hit until above 17 or bust
 		System.out.println(hand);
 		boolean keepGoing = true;
-		while(keepGoing)
-		if (hand.getHandValue() >= 17 && hand.getHandValue() < 22) {
-			System.out.println("The dealer decides to stay");
-			keepGoing = false;
-		} else if (hand.getHandValue() < 17) {
-			System.out.println("The dealer decides to hit");
-			dealToDealer();
-			System.out.println(hand.getHandValue());
-		} else {
-			keepGoing = false;
-		}
+		while (keepGoing)
+			if (hand.getHandValue() >= 17 && hand.getHandValue() < 22) {
+				System.out.println("The dealer decides to stay");
+				keepGoing = false;
+			} else if (hand.getHandValue() < 17) {
+				System.out.println("The dealer decides to hit");
+				dealToDealer();
+				System.out.println(hand.getHandValue());
+			} else {
+				keepGoing = false;
+			}
 	}
-		
+
 	public Hand getHand() {
 		return hand;
 	}
@@ -82,6 +82,7 @@ public class Dealer {
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
+
 	public Deck getDeck() {
 		return newDeck;
 	}
